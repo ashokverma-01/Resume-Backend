@@ -285,3 +285,25 @@ export const deleteResume = async (req, res) => {
     });
   }
 };
+
+export const getPublicResumeById = async (req, res) => {
+  try {
+    const resume = await Resume.findById(req.params.id);
+
+    // Make sure resume exists and is public
+    if (!resume || resume.isPublic !== true) {
+      return res.status(404).json({
+        success: false,
+        message: "Resume not public",
+      });
+    }
+
+    res.json({
+      success: true,
+      resume,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};

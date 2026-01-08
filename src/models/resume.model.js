@@ -57,6 +57,7 @@ const resumeSchema = new mongoose.Schema(
       url: { type: String, default: "" },
       public_id: { type: String, default: "" },
     },
+    isPublic: { type: Boolean, default: true },
   },
   {
     timestamps: true,
