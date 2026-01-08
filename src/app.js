@@ -17,7 +17,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:3000",
-      "https://resume-admin-sandy.vercel.app",
+      "https://resume-admin-alpha.vercel.app",
       "https://av-resume.vercel.app",
     ],
     credentials: true,
